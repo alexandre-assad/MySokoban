@@ -1,16 +1,18 @@
 import pygame
-from utils.pygame_manager.py import *
+from src.layout.game import *
+from src.generator.pygame_event import game_event
 
 def main (state):
+    events= pygame.event.get()
     
     if state == "game":
         
         
-        display_game()
+        display_game(sokoban_map)
         
-        for event in pygame.event.get():
+        for event in events:
             
-            game_event(event)
+            sokoban_map = game_event(event,player,sokoban_map)
 
 
 if "__name__" == "__main__":

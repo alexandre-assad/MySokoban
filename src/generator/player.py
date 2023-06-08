@@ -1,3 +1,5 @@
+from map import Map
+
 
 class Player:
     
