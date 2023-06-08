@@ -11,10 +11,10 @@ def create_display_game():
     pygame.display.set_caption("Space Invader")
 
 def display_game(grid):
-    wallImg = pygame.image.load("../../assets/sprites/wall.png").convert_alpha()
-    boxImg = pygame.image.load("../../assets/sprites/wall.png").convert_alpha()
-    airImg = pygame.image.load("../../assets/sprites/wall.png").convert_alpha()
-    playerImg = pygame.image.load("../../assets/sprites/wall.png").convert_alpha()
+    wallImg = pygame.image.load(sprite_path("wall.png")).convert_alpha()
+    boxImg = pygame.image.load(sprite_path("box.png")).convert_alpha()
+    airImg = pygame.image.load(sprite_path("air.png")).convert_alpha()
+    playerImg = pygame.image.load(sprite_path("player.png")).convert_alpha()
     screen = pygame.display.set_mode((800,600))
     pygame.display.set_caption("Space Invader")
     for i in range(len(grid.matrix)):
