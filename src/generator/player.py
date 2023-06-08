@@ -48,7 +48,15 @@ class Player:
             return grid
         
     
+
+    def push(self,grid):
         
+        if self.direction == "up":
+            
+            if grid[self.y-1][self.x].is_pushable == True:
+                pass
+        
+        pass
     
     
     
