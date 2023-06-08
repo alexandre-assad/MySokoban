@@ -1,50 +1,54 @@
 
 class Player:
     
-    def __init__(self,y:int,x:int):
+    def __init__(self,y:int,x:int,direction=""):
         self.x = x
         self.y = y
+        self.direction = direction
         
-    def movement(self,grille,direction:str):
-        if direction == "up":
+    def movement(self,grid):
+        if self.direction == "up":
             
-            if grille.is_movable(self.y-1,self.x) == True and self.x > 0:
+            if grid.is_movable(self.y-1,self.x) == True and self.x > 0:
                 
-                grille[self.y][self.x] = grille[self.y-1][self.x]
-                grille[self.y-1][self.x] = 12
+                grid[self.y][self.x] = grid[self.y-1][self.x]
+                grid[self.y-1][self.x] = 12
                 
-            return grille
+            return grid
         
-        elif direction == "down":
+        elif self.direction == "down":
             
-            if grille.is_movable(self.y+1,self.x) == True and self.x < len(grille):
+            if grid.is_movable(self.y+1,self.x) == True and self.x < len(grid):
                 
-                grille[self.y][self.x] = grille[self.y+1][self.x]
-                grille[self.y+1][self.x] = 12
+                grid[self.y][self.x] = grid[self.y+1][self.x]
+                grid[self.y+1][self.x] = 12
                 
-            return grille
+            return grid
         
-        elif direction == "left":
+        elif self.direction == "left":
             
-            if grille.is_movable(self.y,self.x-1) == True and self.y > 0:
+            if grid.is_movable(self.y,self.x-1) == True and self.y > 0:
                 
-                grille[self.y][self.x] = grille[self.y][self.x-1]
-                grille[self.y][self.x-1] = 12
+                grid[self.y][self.x] = grid[self.y][self.x-1]
+                grid[self.y][self.x-1] = 12
                 
-            return grille
+            return grid
             
-        elif direction == "right":
+        elif self.direction == "right":
             
-            if grille.is_movable(self.y,self.x+1) == True and self.y > len(grille[0]):
+            if grid.is_movable(self.y,self.x+1) == True and self.y > len(grid[0]):
                 
-                grille[self.y][self.x] = grille[self.y][self.x+1]
-                grille[self.y][self.x+1] = 12
+                grid[self.y][self.x] = grid[self.y][self.x+1]
+                grid[self.y][self.x+1] = 12
                 
-            return grille
+            return grid
 
         else:
             print("erreur")
-            return grille
+            return grid
+        
+    
+        
     
     
     
