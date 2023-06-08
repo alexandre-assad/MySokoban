@@ -6,3 +6,6 @@ class Block:
         self.value = value
         self.push = is_pushable
         self.move = is_movable
+        
+    def __repr__(self):
+        return self.value

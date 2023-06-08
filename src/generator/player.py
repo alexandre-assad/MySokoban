@@ -7,9 +7,10 @@ class Player:
         self.direction = direction
         
     def movement(self,grid):
+        
         if self.direction == "up":
             
-            if grid.is_movable(self.y-1,self.x) == True and self.x > 0:
+            if grid.is_movable(self.y-1,self.x) and self.x > 0:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y-1][self.x]
                 grid.matrix[self.y-1][self.x] = 12
@@ -18,7 +19,7 @@ class Player:
         
         elif self.direction == "down":
             
-            if grid.is_movable(self.y+1,self.x) == True and self.x < len(grid):
+            if grid.is_movable(self.y+1,self.x) and self.x < len(grid):
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y+1][self.x]
                 grid.matrix[self.y+1][self.x] = 12
@@ -27,7 +28,7 @@ class Player:
         
         elif self.direction == "left":
             
-            if grid.is_movable(self.y,self.x-1) == True and self.y > 0:
+            if grid.is_movable(self.y,self.x-1) and self.y > 0:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y][self.x-1]
                 grid.matrix[self.y][self.x-1] = 12
@@ -36,7 +37,7 @@ class Player:
             
         elif self.direction == "right":
             
-            if grid.is_movable(self.y,self.x+1) == True and self.y > len(grid[0]):
+            if grid.is_movable(self.y,self.x+1) and self.y > len(grid[0]):
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y][self.x+1]
                 grid.matrix[self.y][self.x+1] = 12
