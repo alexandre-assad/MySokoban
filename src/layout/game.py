@@ -18,7 +18,6 @@ def display_game(grid):
     playerImg = pygame.image.load(sprite_path("player.png")).convert_alpha()
     screen = pygame.display.set_mode((800,600))
     pygame.display.set_caption("Space Invader")
-    print(grid)
     for i in range(9):
         for j in range(9):
     

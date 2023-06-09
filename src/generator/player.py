@@ -92,6 +92,8 @@ class Player:
                 old_block = grid.matrix[self.y][self.x-2]
                 grid.matrix[self.y][self.x-2] = grid.matrix[self.y-1][self.x]
                 grid.matrix[self.y][self.x-1] = old_block
+                
+        return grid
     
     
     

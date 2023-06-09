@@ -1,6 +1,6 @@
 import pygame
 from src.utils.pygame_manager import *
-def game_event(event,grid,player):
+def game_event(event,player,grid):
     
     if up_key(event):
         player.direction = "up"
@@ -17,5 +17,6 @@ def game_event(event,grid,player):
     elif right_key(event):
         player.direction = "right"
         grid = player.movement(grid)
-    
+
+
     return grid
