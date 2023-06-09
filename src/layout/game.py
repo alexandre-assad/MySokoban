@@ -18,8 +18,10 @@ def display_game(grid):
     playerImg = pygame.image.load(sprite_path("player.png")).convert_alpha()
     screen = pygame.display.set_mode((800,600))
     pygame.display.set_caption("Space Invader")
-    for i in range(len(grid.matrix)):
-        for j in range(len(grid.matrix[0])):
+    print(grid)
+    for i in range(9):
+        for j in range(9):
+    
             if grid.matrix[i][j].value == 0:
                 screen.blit(airImg,position_in_grid(i,j))
             elif grid.matrix[i][j].value == 1:

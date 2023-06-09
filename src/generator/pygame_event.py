@@ -17,3 +17,5 @@ def game_event(event,grid,player):
     elif right_key(event):
         player.direction = "right"
         grid = player.movement(grid)
+    
+    return grid

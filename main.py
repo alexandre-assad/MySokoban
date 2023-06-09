@@ -10,7 +10,8 @@ def generate_map(Player):
     wallBlock = Block(1)
     airBlock = Block(0,False,True)
     boxBlock = Block(2,True,False)
-    maps = [wallBlock for i in range(10)]
+    line = [wallBlock for i in range(10)]
+    maps = [line]
     for i in range(8):
         new_list = [wallBlock]
         for j in range(8):
@@ -20,17 +21,16 @@ def generate_map(Player):
                 new_list.append(airBlock)
         new_list.append(wallBlock)
         maps.append(new_list)
-    return [maps]
+    maps.append([wallBlock for i in range(10)])
+    return maps
 
 first_player = Player(3,6,"up")
 sokoban_map = Map(generate_map(first_player))
 
 
-
 def main (state,sokoban_map,first_player):
     create_display_game()
     events= pygame.event.get()
-    print("ha")
     while state == "game":
         display_game(sokoban_map)
         
