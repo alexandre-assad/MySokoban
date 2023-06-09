@@ -18,5 +18,5 @@ def game_event(event,player,grid):
         player.direction = "right"
         grid = player.movement(grid)
 
-
+    pygame.display.update()
     return grid

@@ -39,6 +39,6 @@ def main (state,sokoban_map,first_player):
                 state = "over"
             sokoban_map = game_event(event,first_player,sokoban_map)
 
-
+    pygame.quit()
 if __name__ == "__main__":
     main("game",sokoban_map,first_player)
