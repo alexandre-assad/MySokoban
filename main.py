@@ -37,7 +37,9 @@ first_player = Player(3,6,"")
 sokoban_map = Map(generate_map(first_player))
 
 sokoban_map.matrix[4][4] = Block(2,True,False)
+sokoban_map.matrix[5][5] = Block(2,True,False)
 sokoban_map.matrix[7][3] = Block(3,False,False)
+sokoban_map.matrix[2][7] = Block(3,False,False)
 
 def main (state,sokoban_map,first_player):
     game_object = create_display_game()
