@@ -14,11 +14,11 @@ class Map:
     def is_pushable(self,y,x,direction):
         
         if direction == "up":
-            return self.matrix[y][x].push and self.matrix[y-1][x].move
+            return self.matrix[y][x].push and self.matrix[y][x-1].move
             
         elif direction == "down":
             
-            if self.matrix[y][x].push == True and self.matrix[y+1][x].move == True:
+            if self.matrix[y][x].push == True and self.matrix[y][x+1].move == True:
                 
                 return True
                 
