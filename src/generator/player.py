@@ -8,6 +8,8 @@ class Player:
         self.direction = direction
         self.value = 12
         
+    def __repr__(self):
+        return self.value
         
     def movement(self,grid):
         
