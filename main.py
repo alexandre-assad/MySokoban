@@ -27,6 +27,7 @@ def generate_map(Player):
 first_player = Player(3,6,"")
 sokoban_map = Map(generate_map(first_player))
 
+sokoban_map.matrix[4][4] = Block(2,True,False)
 
 def main (state,sokoban_map,first_player):
     game_object = create_display_game()

@@ -48,11 +48,23 @@ def left_key(event):
     
 
 def right_key(event):
+    
     if event.type == pygame.KEYDOWN:
+        
         if event.key == pygame.K_RIGHT:
             return True
         
         return False
+    
+def p_key(event):
+
+    if event.type == pygame.KEYDOWN:
+        
+        if event.key == pygame.K_p:
+            return True
+        
+        return False
+
 
 def r_key(event):
     

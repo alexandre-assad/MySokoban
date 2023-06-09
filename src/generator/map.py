@@ -13,10 +13,10 @@ class Map:
     #We try to know if the actual block is pushable, and the next one is movable to 
     def is_pushable(self,y,x,direction):
         
-        if self.direction == "up":
+        if direction == "up":
             return self.matrix[y][x].push and self.matrix[y-1][x].move
             
-        elif self.direction == "down":
+        elif direction == "down":
             
             if self.matrix[y][x].push == True and self.matrix[y+1][x].move == True:
                 
@@ -24,7 +24,7 @@ class Map:
                 
             return False
             
-        elif self.direction == "left":
+        elif direction == "left":
             
             if self.matrix[y][x].push == True and self.matrix[y][x-1].move == True:
                 
@@ -32,7 +32,7 @@ class Map:
                 
             return False
         
-        elif self.direction == "right":
+        elif direction == "right":
             
             if self.matrix[y][x].push == True and self.matrix[y][x+1].move == True:
                 
