@@ -3,7 +3,7 @@ from utils.pygame_manager import *
 from utils.os_manager import *  
 
 def position_in_grid(y,x):
-    pass
+    return [y*50,x*50]
 
 def create_display_game():
     pygame.init()
@@ -27,4 +27,6 @@ def display_game(grid):
                 screen.blit(boxImg,position_in_grid(i,j))
             elif grid.matrix[i][j] == 12:
                 screen.blit(playerImg,position_in_grid(i,j))
+
+
 

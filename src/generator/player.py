@@ -16,6 +16,7 @@ class Player:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y-1][self.x]
                 grid.matrix[self.y-1][self.x] = 12
+                self.y -=1
                 
             return grid
         
@@ -25,6 +26,7 @@ class Player:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y+1][self.x]
                 grid.matrix[self.y+1][self.x] = 12
+                self.y += 1
                 
             return grid
         
@@ -34,6 +36,7 @@ class Player:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y][self.x-1]
                 grid.matrix[self.y][self.x-1] = 12
+                self.x -= 1
                 
             return grid
             
@@ -43,6 +46,7 @@ class Player:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y][self.x+1]
                 grid.matrix[self.y][self.x+1] = 12
+                self.x +=1
                 
             return grid
 
