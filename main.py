@@ -9,8 +9,7 @@ from src.generator.block import Block
 def generate_map(Player):
     wallBlock = Block(1)
     airBlock = Block(0,False,True)
-    boxBlock = Block(2,True,False)
-    line = [wallBlock for i in range(10)]
+    line = [wallBlock for _ in range(10)]
     maps = [line]
     for i in range(8):
         new_list = [wallBlock]
@@ -21,13 +20,14 @@ def generate_map(Player):
                 new_list.append(airBlock)
         new_list.append(wallBlock)
         maps.append(new_list)
-    maps.append([wallBlock for i in range(10)])
+    maps.append([wallBlock for _ in range(10)])
     return maps
 
 first_player = Player(3,6,"")
 sokoban_map = Map(generate_map(first_player))
 
 sokoban_map.matrix[4][4] = Block(2,True,False)
+sokoban_map.matrix[7][2] = Block(3,False,True)
 
 def main (state,sokoban_map,first_player):
     game_object = create_display_game()
