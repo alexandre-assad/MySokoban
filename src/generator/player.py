@@ -63,7 +63,16 @@ class Player:
         
         if self.direction == "up":
             
-            if grid.is_pushable(self.y,self.x-1,self.direction) :
+            if grid.is_pushable(self.y,self.x-1,self.direction) == "check":
+                
+                grid.matrix[self.y][self.x-2].value = 2
+                grid.matrix[self.y][self.x-2].push = False
+                grid.matrix[self.y][self.x-2].move = False
+                grid.matrix[self.y][self.x-1].value =0
+                grid.matrix[self.y][self.x-1].push =False
+                grid.matrix[self.y][self.x-1].move =True 
+            
+            elif grid.is_pushable(self.y,self.x-1,self.direction) :
                 
                 old_block = grid.matrix[self.y][self.x-2]
                 grid.matrix[self.y][self.x-2] = grid.matrix[self.y][self.x-1]
@@ -71,29 +80,57 @@ class Player:
         
         elif self.direction == "down":
             
-            if grid.is_pushable(self.y,self.x+1,self.direction) :
+            if grid.is_pushable(self.y,self.x+1,self.direction) == "check":
+                
+                grid.matrix[self.y][self.x+2].value = 2
+                grid.matrix[self.y][self.x+2].push = False
+                grid.matrix[self.y][self.x+2].move = False
+                grid.matrix[self.y][self.x+1].value =0
+                grid.matrix[self.y][self.x+1].push =False
+                grid.matrix[self.y][self.x+1].move =True 
+                
+            elif grid.is_pushable(self.y,self.x+1,self.direction) :
                 
                 old_block = grid.matrix[self.y][self.x+2]
                 grid.matrix[self.y][self.x+2] = grid.matrix[self.y][self.x+1]
                 grid.matrix[self.y][self.x+1] = old_block
                 
         elif self.direction == "right":
-            
-            if grid.is_pushable(self.y+1,self.x,self.direction):
+
+            if grid.is_pushable(self.y+1,self.x,self.direction) == "check":
+                
+                grid.matrix[self.y+2][self.x].value = 2
+                grid.matrix[self.y+2][self.x].push = False
+                grid.matrix[self.y+2][self.x].move = False
+                grid.matrix[self.y+1][self.x].value =0
+                grid.matrix[self.y+1][self.x].push =False
+                grid.matrix[self.y+1][self.x].move =True 
+                
+            elif grid.is_pushable(self.y+1,self.x,self.direction):
                 
                 old_block = grid.matrix[self.y+2][self.x]
                 grid.matrix[self.y+2][self.x] = grid.matrix[self.y+1][self.x]
                 grid.matrix[self.y+1][self.x] = old_block
-                
+
         
         elif self.direction == "left":
             
-            if grid.is_pushable(self.y-1,self.x,self.direction):
+            if grid.is_pushable(self.y-1,self.x,self.direction) == "check":
+                
+                grid.matrix[self.y-2][self.x].value =2
+                grid.matrix[self.y-2][self.x].push = False
+                grid.matrix[self.y-2][self.x].move = False
+                grid.matrix[self.y-1][self.x].value =0
+                grid.matrix[self.y-1][self.x].push =False
+                grid.matrix[self.y-1][self.x].move =True
+                
+            elif grid.is_pushable(self.y-1,self.x,self.direction):
                 
                 old_block = grid.matrix[self.y-2][self.x]
                 grid.matrix[self.y-2][self.x] = grid.matrix[self.y-1][self.x]
                 grid.matrix[self.y-1][self.x] = old_block
                 
+            
         return grid
     
     

@@ -14,28 +14,26 @@ class Map:
     def is_pushable(self,y,x,direction):
         
         if direction == "up":
-            return self.matrix[y][x].push and self.matrix[y][x-1].move
+            
+            if self.matrix[y][x-1].value != 3:
+                return self.matrix[y][x].push and self.matrix[y][x-1].move
+            elif self.matrix[y][x-1].value == 3 and self.matrix[y][x].push==True:
+                return "check"
             
         elif direction == "down":
-            
-            if self.matrix[y][x].push == True and self.matrix[y][x+1].move == True:
-                
-                return True
-                
-            return False
+            if self.matrix[y][x+1].value != 3:
+                return self.matrix[y][x].push and self.matrix[y][x+1].move
+            elif self.matrix[y][x+1].value == 3 and self.matrix[y][x].push==True:
+                return "check"
             
         elif direction == "left":
-            
-            if self.matrix[y][x].push == True and self.matrix[y][x-1].move == True:
-                
-                return True
-                
-            return False
-        
+            if self.matrix[y-1][x].value != 3:
+                return self.matrix[y][x].push and self.matrix[y-1][x].move
+            elif self.matrix[y-1][x].value == 3 and self.matrix[y][x].push==True:
+                return "check"
+
         elif direction == "right":
-            
-            if self.matrix[y][x].push == True and self.matrix[y][x+1].move == True:
-                
-                return True
-                
-            return False
+            if self.matrix[y+1][x].value != 3:
+                return self.matrix[y][x].push and self.matrix[y+1][x].move
+            elif self.matrix[y+1][x].value == 3 and self.matrix[y][x].push==True:
+                return "check"
