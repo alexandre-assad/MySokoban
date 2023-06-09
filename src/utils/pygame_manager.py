@@ -74,3 +74,7 @@ def r_key(event):
             return True
         
         return False
+
+def test_win(player,compteur):
+    return player.compteur == compteur
+        

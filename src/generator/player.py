@@ -7,6 +7,7 @@ class Player:
         self.y = y
         self.direction = direction
         self.value = 12
+        self.compteur = 0
         
     def __repr__(self):
         return str(self.value)
@@ -68,9 +69,12 @@ class Player:
                 grid.matrix[self.y][self.x-2].value = 2
                 grid.matrix[self.y][self.x-2].push = False
                 grid.matrix[self.y][self.x-2].move = False
+                
                 grid.matrix[self.y][self.x-1].value =0
                 grid.matrix[self.y][self.x-1].push =False
                 grid.matrix[self.y][self.x-1].move =True 
+                
+                self.compteur +=1
             
             elif grid.is_pushable(self.y,self.x-1,self.direction) :
                 
@@ -85,9 +89,12 @@ class Player:
                     grid.matrix[self.y][self.x+2].value = 2
                     grid.matrix[self.y][self.x+2].push = False
                     grid.matrix[self.y][self.x+2].move = False
+                    
                     grid.matrix[self.y][self.x+1].value =0
                     grid.matrix[self.y][self.x+1].push =False
                     grid.matrix[self.y][self.x+1].move =True 
+                
+                    self.compteur +=1
                     
                 elif grid.is_pushable(self.y,self.x+1,self.direction) :
                     
@@ -103,9 +110,13 @@ class Player:
                     grid.matrix[self.y+2][self.x].value = 2
                     grid.matrix[self.y+2][self.x].push = False
                     grid.matrix[self.y+2][self.x].move = False
+                    
                     grid.matrix[self.y+1][self.x].value =0
                     grid.matrix[self.y+1][self.x].push =False
                     grid.matrix[self.y+1][self.x].move =True 
+                    
+                    self.compteur +=1
+                    
                     
                 elif grid.is_pushable(self.y+1,self.x,self.direction):
                     
@@ -122,9 +133,12 @@ class Player:
                 grid.matrix[self.y-2][self.x].value =2
                 grid.matrix[self.y-2][self.x].push = False
                 grid.matrix[self.y-2][self.x].move = False
+                
                 grid.matrix[self.y-1][self.x].value =0
                 grid.matrix[self.y-1][self.x].push =False
                 grid.matrix[self.y-1][self.x].move =True
+                
+                self.compteur +=1
                 
             elif grid.is_pushable(self.y-1,self.x,self.direction):
                 

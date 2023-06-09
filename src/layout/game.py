@@ -32,7 +32,9 @@ def display_game(grid,game,player):
             elif grid.matrix[i][j].value == 3:
                 game.screen.blit(checkImg,position_in_grid(i,j))
     game.screen.blit(playerImg,position_in_grid(player.y,player.x))
+    if test_win(player,1):
+        return "over"
     pygame.display.update()
-
+    return "game"
 
 
