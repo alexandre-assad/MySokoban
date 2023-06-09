@@ -1,4 +1,3 @@
-from map import Map
 
 
 class Player:
@@ -7,6 +6,8 @@ class Player:
         self.x = x
         self.y = y
         self.direction = direction
+        self.value = 12
+        
         
     def movement(self,grid):
         

@@ -1,6 +1,7 @@
 import pygame
-from utils.pygame_manager import *
-from utils.os_manager import *  
+from src.utils.pygame_manager import *
+from src.utils.os_manager import *  
+
 
 def position_in_grid(y,x):
     return [y*50,x*50]
@@ -19,13 +20,13 @@ def display_game(grid):
     pygame.display.set_caption("Space Invader")
     for i in range(len(grid.matrix)):
         for j in range(len(grid.matrix[0])):
-            if grid.matrix[i][j] == 0:
+            if grid.matrix[i][j].value == 0:
                 screen.blit(airImg,position_in_grid(i,j))
-            elif grid.matrix[i][j] == 1:
+            elif grid.matrix[i][j].value == 1:
                 screen.blit(wallImg,position_in_grid(i,j))
-            elif grid.matrix[i][j] == 2:
+            elif grid.matrix[i][j].value == 2:
                 screen.blit(boxImg,position_in_grid(i,j))
-            elif grid.matrix[i][j] == 12:
+            elif grid.matrix[i][j].value == 12:
                 screen.blit(playerImg,position_in_grid(i,j))
 
 

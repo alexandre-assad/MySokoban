@@ -8,4 +8,4 @@ class Block:
         self.move = is_movable
         
     def __repr__(self):
-        return self.value
+        return str(self.value)
