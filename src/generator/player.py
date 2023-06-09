@@ -9,7 +9,7 @@ class Player:
         self.value = 12
         
     def __repr__(self):
-        return self.value
+        return str(self.value)
         
     def movement(self,grid):
         

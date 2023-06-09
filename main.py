@@ -22,23 +22,23 @@ def generate_map(Player):
         maps.append(new_list)
     return [maps]
 
-print(generate_map(Player(4,4,"up")))
+first_player = Player(3,6,"up")
+sokoban_map = Map(generate_map(first_player))
 
 
-def main (state):
+
+def main (state,sokoban_map,first_player):
+    create_display_game()
     events= pygame.event.get()
-    
+    print("ha")
     while state == "game":
-        
-        
         display_game(sokoban_map)
         
         for event in events:
             if event.type == pygame.QUIT:
                 state = "over"
-            sokoban_map = game_event(event,player,sokoban_map)
+            sokoban_map = game_event(event,first_player,sokoban_map)
 
 
-if "__name__" == "__main__":
-    # main("game")
-    pass
+if __name__ == "__main__":
+    main("game",sokoban_map,first_player)
