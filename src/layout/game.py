@@ -19,7 +19,7 @@ def create_display_game():
     
     
 
-def display_game(grid,game):
+def display_game(grid,game,player):
     for i in range(10):
         for j in range(10):
             if grid.matrix[i][j].value == 0:
@@ -28,8 +28,7 @@ def display_game(grid,game):
                 game.screen.blit(wallImg,position_in_grid(i,j))
             elif grid.matrix[i][j].value == 2:
                 game.screen.blit(boxImg,position_in_grid(i,j))
-            elif grid.matrix[i][j].value == 12:
-                game.screen.blit(playerImg,position_in_grid(i,j))
+    game.screen.blit(playerImg,position_in_grid(player.y,player.x))
     pygame.display.update()
 
 

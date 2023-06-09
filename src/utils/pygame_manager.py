@@ -25,9 +25,7 @@ def up_key(event):
     if event.type == pygame.KEYDOWN:
         
         if event.key == pygame.K_UP:
-            print("ho")
             return True
-        print("ha")
         return False
 
 def down_key(event):
@@ -50,9 +48,7 @@ def left_key(event):
     
 
 def right_key(event):
-    
     if event.type == pygame.KEYDOWN:
-        
         if event.key == pygame.K_RIGHT:
             return True
         

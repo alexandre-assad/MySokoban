@@ -15,7 +15,7 @@ def generate_map(Player):
     for i in range(8):
         new_list = [wallBlock]
         for j in range(8):
-            if i == Player.y and j== Player.x:
+            if i == Player.y-1 and j== Player.x-1:
                 new_list.append(Player)
             else:
                 new_list.append(airBlock)
@@ -32,7 +32,7 @@ def main (state,sokoban_map,first_player):
     game_object = create_display_game()
     while state == "game":
         events = pygame.event.get()
-        display_game(sokoban_map,game_object)
+        display_game(sokoban_map,game_object,first_player)
         for event in events:
             if event.type == pygame.QUIT:
                 state = "over"
