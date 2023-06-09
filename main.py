@@ -24,14 +24,14 @@ def generate_map(Player):
     maps.append([wallBlock for i in range(10)])
     return maps
 
-first_player = Player(3,6,"up")
+first_player = Player(3,6,"")
 sokoban_map = Map(generate_map(first_player))
 
 
 def main (state,sokoban_map,first_player):
     game_object = create_display_game()
-    events= pygame.event.get()
     while state == "game":
+        events = pygame.event.get()
         display_game(sokoban_map,game_object)
         for event in events:
             if event.type == pygame.QUIT:

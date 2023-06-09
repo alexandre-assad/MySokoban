@@ -21,7 +21,7 @@ We do player.push(grid)
 
 
 def up_key(event):
-    
+
     if event.type == pygame.KEYDOWN:
         
         if event.key == pygame.K_UP:

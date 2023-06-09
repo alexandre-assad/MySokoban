@@ -18,17 +18,17 @@ class Player:
             if grid.is_movable(self.y-1,self.x) and self.x > 0:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y-1][self.x]
-                grid.matrix[self.y-1][self.x] = 12
+                grid.matrix[self.y-1][self.x] = self
                 self.y -=1
                 
             return grid
         
         elif self.direction == "down":
             
-            if grid.is_movable(self.y+1,self.x) and self.x < len(grid):
+            if grid.is_movable(self.y+1,self.x) and self.x < len(grid.matrix):
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y+1][self.x]
-                grid.matrix[self.y+1][self.x] = 12
+                grid.matrix[self.y+1][self.x] = self
                 self.y += 1
                 
             return grid
@@ -38,17 +38,17 @@ class Player:
             if grid.is_movable(self.y,self.x-1) and self.y > 0:
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y][self.x-1]
-                grid.matrix[self.y][self.x-1] = 12
+                grid.matrix[self.y][self.x-1] = self
                 self.x -= 1
                 
             return grid
             
         elif self.direction == "right":
             
-            if grid.is_movable(self.y,self.x+1) and self.y > len(grid[0]):
+            if grid.is_movable(self.y,self.x+1) and self.y > len(grid.matrix[0]):
                 
                 grid.matrix[self.y][self.x] = grid.matrix[self.y][self.x+1]
-                grid.matrix[self.y][self.x+1] = 12
+                grid.matrix[self.y][self.x+1] = self
                 self.x +=1
                 
             return grid
