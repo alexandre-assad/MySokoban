@@ -29,14 +29,14 @@ sokoban_map = Map(generate_map(first_player))
 
 
 def main (state,sokoban_map,first_player):
-    create_display_game()
+    game_object = create_display_game()
     events= pygame.event.get()
     while state == "game":
-        display_game(sokoban_map)
-        
+        display_game(sokoban_map,game_object)
         for event in events:
             if event.type == pygame.QUIT:
                 state = "over"
+                
             sokoban_map = game_event(event,first_player,sokoban_map)
 
     pygame.quit()
